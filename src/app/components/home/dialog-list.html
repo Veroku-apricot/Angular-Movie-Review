@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Elimina lista</h1>
+<div mat-dialog-content>
+  Sei sicuro di voler eliminare la lista "{{data.name}}"?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Annulla</button>
+  <button mat-button mat-dialog-close (click)="remove()" style="margin-left: 10px;">Rimuovi</button>
+</div>

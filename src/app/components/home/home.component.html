@@ -1,0 +1,19 @@
+
+<h2>Ciao, {{utente}}</h2>
+<p *ngIf="listExists">
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="Cerca Lista" [(ngModel)]="search" (keyup)="filter()">
+    </mat-form-field>
+</p>
+
+<p *ngIf="liste.length == 0">Non ci sono liste!</p>
+
+<div @fadeIn *ngIf="isVisible">
+  <div *ngFor="let lista of liste; let i=index" style="margin-bottom: 20px;">
+    <button [class]="lista.tag" (click)="openList(i)">{{lista.titoloLista}}</button>
+    <button mat-button (click)="openDialog(i)" style="margin-left: 10px;">Elimina</button>
+  </div>
+</div>
+
+<button (click)="pageAnimation('/crea-lista')">+</button>
+

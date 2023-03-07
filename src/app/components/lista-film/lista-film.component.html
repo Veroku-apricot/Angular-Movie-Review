@@ -1,0 +1,35 @@
+<div>
+    <p>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Cerca Film" [(ngModel)]="search" (keyup)="filter()">
+        </mat-form-field>
+        <mat-slide-toggle [checked]="checked" (click)="filterRewMovies()" style="margin-left: 20px;">Recensiti</mat-slide-toggle>
+    </p>
+    <p *ngIf="listaFilm.length == 0" [class]="tag">Non ci sono Film!</p>
+
+    <div @fadeIn *ngIf="isVisible" class="list-container">
+        <div *ngFor="let film of listaFilm; let i=index" style="border: 1px solid white" [class]="tag">
+            <div (click)="selectMovie(i, '/recensione-film')">
+                <p>{{film.nome}}</p>
+                <p>{{film.anno}}</p>
+                <img [src]="film.poster" alt="" style="width: 150px">
+                <div *ngIf="film.recensione != undefined">
+                    <p>Recensione:</p>
+                    <p>
+                        Voto: 
+                        <img class="star" *ngFor="let star of film.recensione.stars; let i = index" [src]="star ? starPath : emptyStarPath" alt="">
+                       
+                    </p>
+                    <p>Commento: {{film.recensione.testo}}</p>
+                </div>
+            </div>
+            <button (click)="selectMovie(i, '/scheda-film')">Più Info</button>
+            
+            <button mat-button (click)="openDialog(i)">Rimuovi</button>
+        </div>
+    </div>   
+</div>
+<br>
+<button (click)="pageAnimation('/trova-film')">+</button>
+
+

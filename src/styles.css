@@ -1,0 +1,91 @@
+*{
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+    font-family: sans-serif;
+    color: #2C2A4A;
+}
+
+body{
+    background-color: #907AD6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px 50px;
+    background-color: #DABFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+button{
+    background-color: #7FDEFF;
+    color: #4F518C;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #907AD6;
+    border-radius: 3px;
+}
+button:hover, button:focus {
+    cursor: pointer;
+    background-color: #907AD6;
+    color: #2C2A4A;
+}
+
+.purple{
+    background-color: rgb(202, 128, 255);
+}
+
+.orange{
+    background-color: rgb(255, 175, 77);
+}
+
+.green{
+    background-color: rgb(154, 205, 50);
+}
+
+.blue{
+    background-color: rgb(123, 151, 234);
+}
+
+.red{
+    background-color: rgb(222, 84, 84);
+}
+
+.purple, .orange, .green, .blue, .red{
+    color: #2C2A4A;
+    padding: 10px;
+}
+
+button.tag:hover{
+    cursor: pointer;
+    background-color: #7FDEFF;
+    color: #4F518C;
+}
+
+.star {
+    width: 30px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-icon-button:focus, .mat-mdc-icon-button:hover, .mat-calendar-body-cell:focus, .mat-calendar-body-cell:hover, button.mdc-switch:hover,  button.mdc-switch:focus{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+}

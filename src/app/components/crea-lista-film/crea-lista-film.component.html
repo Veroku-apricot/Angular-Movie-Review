@@ -1,0 +1,17 @@
+<h2>Crea Lista</h2>
+<form [formGroup]="listForm" (ngSubmit)="addList()">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome della lista</mat-label>
+        <input matInput type="text" name="titoloLista" formControlName="titoloLista">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Scegli un tag</mat-label>
+        <mat-select name="tag" formControlName="tag">
+            <mat-option *ngFor="let btn of tagButtons; let i = index" [class]="btn.color" [value]="btn.color">
+                {{btn.text}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <button type="submit" [disabled]="!listForm.valid">Invia</button>
+</form>

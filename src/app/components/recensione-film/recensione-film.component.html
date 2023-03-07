@@ -1,0 +1,12 @@
+<h2>{{movie.nome}}</h2>
+<p><img [src]="movie.poster" alt=""></p>
+<label for="">Voto:</label>
+<p>
+    <img class="star" *ngFor="let star of recensione.stars; let i = index" [src]="star ? starPath : emptyStarPath" (click)="canEdit ? rate(i) : ''" alt="">
+</p>
+<label for="">Recensione:</label><br>
+<textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Scrivi la tua recensione" [(ngModel)]="recensione.testo" [disabled] = "!canEdit"></textarea><br>
+
+<button *ngIf="canEdit && editButton" (click)="sendReview(recensioneOriginale)">Annulla</button>
+<button *ngIf="canEdit" (click)="sendReview(recensione)">Invia</button><br>
+<button *ngIf="editButton" (click)="editReview()">Modifica</button>

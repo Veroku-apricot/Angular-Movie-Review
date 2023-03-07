@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" name="username" formControlName="username">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" name="password" formControlName="password">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Data di Nascita</mat-label>
+        <input matInput [matDatepicker]="picker" name="nascita" formControlName="nascita">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Descrizione</mat-label>
+        <textarea matInput name="descrizione" formControlName="descrizione"></textarea>
+    </mat-form-field>
+    <button type="submit" [disabled]="!registerForm.valid">Registrati</button>
+</form>
